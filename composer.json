@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
-        "backup-manager/backup-manager": "^3.0",
+        "backup-manager/laravel": "dev-master",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.65",
@@ -21,6 +21,12 @@
         "nunomaduro/collision": "^5.10",
         "phpunit/phpunit": "^9.5.10"
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/mrgeneralgoo/laravel.git"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "App\\": "app/",

@@ -10,10 +10,10 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV PATH ./vendor/bin:/composer/vendor/bin:$PATH
 
 # install depends
-RUN apk add --no-cache --virtual .persistent-deps \
-    oniguruma-dev git freetype-dev libpng-dev libjpeg-turbo-dev libxml2-dev libzip-dev postgresql-dev mysql-client postgresql-client \
+RUN apk add --update --no-cache --virtual .persistent-deps \
+    oniguruma-dev git freetype-dev libpng-dev libjpeg-turbo-dev libxml2-dev libzip-dev postgresql-dev mysql-client postgresql-client
 
-    && apk add --no-cache --virtual .build-deps $PHPIZE_DEPS \
+RUN apk add --no-cache --virtual .build-deps $PHPIZE_DEPS \
 
     # install core extensions
     && docker-php-ext-configure gd --with-freetype --with-jpeg \

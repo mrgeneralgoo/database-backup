@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d172e092a8efd17e019515dcc40df15a",
+    "content-hash": "63d616504f5994b27e2e22c8595abc90",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -138,6 +138,56 @@
                 "source": "https://github.com/backup-manager/backup-manager/tree/3.0.1"
             },
             "time": "2020-02-16T20:06:32+00:00"
+        },
+        {
+            "name": "backup-manager/laravel",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mrgeneralgoo/laravel.git",
+                "reference": "88921db629efb20fb96551c180c8b2e5df18bde3"
+            },
+            "require": {
+                "backup-manager/backup-manager": "^3.0",
+                "illuminate/console": "^5.5||^6||^7||^8",
+                "illuminate/container": "^5.5||^6||^7||^8",
+                "illuminate/support": "^5.5||^6||^7||^8",
+                "php": "^7.3||^7.4||^8",
+                "symfony/process": "^3||^4||^5"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master",
+                "satooshi/php-coveralls": "~0.6"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "BackupManager\\Laravel\\Laravel55ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BackupManager\\Laravel\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shawn McCool",
+                    "email": "shawn@heybigname.com",
+                    "homepage": "https://shawnmc.cool"
+                }
+            ],
+            "description": "Database backup manager seamlessly integrated with Laravel 4 or 5 with user-definable procedures and support for S3, Dropbox, FTP, SFTP, and more.",
+            "time": "2021-11-07T12:26:35+00:00"
         },
         {
             "name": "brick/math",
@@ -8026,7 +8076,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "backup-manager/laravel": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('command:sql-backup', [env('DB_TYPE'), env('MAIL_RECIPIENT_ADDRESS')])->daily();
     }
 
     /**
