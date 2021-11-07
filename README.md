@@ -45,7 +45,7 @@ services:
       TZ: Asia/Shanghai
       APP_KEY: nXsIUyUtJsjoPg6gHKRxFhlW7oHFhIiy
       # db config
-      DB_TYPE: pgsql
+      DB_TYPE: mysql
       DB_HOST: mysql
       DB_PORT: 5432
       DB_DATABASE: mysql_db
@@ -78,7 +78,7 @@ services:
     container_name: postgres
     restart: always
     environment:
-	    POSTGRES_DB: postgres_db
+      POSTGRES_DB: postgres_db
       POSTGRES_USER: postgres_user
       POSTGRES_PASSWORD: postgres_password
       TZ: Asia/Shanghai
