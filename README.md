@@ -1,4 +1,4 @@
-# Database Backup Service Dayliy
+# Database Backup Service Daily
 
 Use email attachments to back up the database to the mailbox every day, support MySQL, PostgreSQL.
 
