@@ -17,13 +17,8 @@ jobs:
         with:
           php-version: "8.0"
 
-      - name: Install composer
-        uses: "ramsey/composer-install@v1"
-        with:
-          composer-options: "--no-dev --optimize-autoloader"
-
       - name: Init project
-        run: php artisan vendor:publish --all && php artisan config:clear && php artisan config:cache
+        run: composer install --no-interaction --no-progress --ansi --no-dev --optimize-autoloader && php artisan vendor:publish --all
 
       - name: Build and push docker image
         uses: mr-smithers-excellent/docker-build-push@v5
