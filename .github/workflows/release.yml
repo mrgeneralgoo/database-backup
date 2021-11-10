@@ -12,8 +12,21 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v2
 
-      - uses: mr-smithers-excellent/docker-build-push@v5
-        name: Build & push Docker image
+      - name: Setup enviroment
+        uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "8.0"
+
+      - name: Install composer
+        uses: "ramsey/composer-install@v1"
+        with:
+          composer-options: "--no-dev --optimize-autoloader"
+
+      - name: Init project
+        run: php artisan vendor:publish --all && php artisan config:clear && php artisan config:cache
+
+      - name: Build and push docker image
+        uses: mr-smithers-excellent/docker-build-push@v5
         with:
           image: mrgeneralgoo/database-backup
           tags: latest
