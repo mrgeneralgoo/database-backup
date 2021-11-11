@@ -25,6 +25,9 @@ RUN apk add --update --no-cache --virtual .persistent-deps \
     && pecl install redis \
     && docker-php-ext-enable redis \
 
+    # use the default production configuration
+    && mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
+
     # install composer
     && curl -s https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer \
 
