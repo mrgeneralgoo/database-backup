@@ -19,7 +19,7 @@ RUN apk add --update --no-cache --virtual .persistent-deps \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd \
     && docker-php-ext-configure zip \
-    && docker-php-ext-install -j"$(getconf _NPROCESSORS_ONLN)" iconv mbstring pdo pdo_mysql pdo_pgsql pcntl xml gd zip bcmath \
+    && docker-php-ext-install -j"$(getconf _NPROCESSORS_ONLN)" mbstring pdo pdo_mysql pdo_pgsql pcntl xml gd zip bcmath \
 
     # install pecl extensions
     && pecl install redis \
