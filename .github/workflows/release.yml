@@ -18,7 +18,7 @@ jobs:
           php-version: "8.0"
 
       - name: Init project
-        run: composer install --no-interaction --no-progress --ansi --no-dev --optimize-autoloader && php artisan vendor:publish --all
+        run: composer install --no-interaction --no-progress --ansi --no-dev --optimize-autoloader && php artisan vendor:publish --all && php artisan optimize
 
       - name: Build and push docker image
         uses: mr-smithers-excellent/docker-build-push@v5
